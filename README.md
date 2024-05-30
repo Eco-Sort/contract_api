@@ -1,4 +1,3 @@
-# Users
 * User object
 ```
 {
@@ -9,8 +8,19 @@
   updated_at: datetime
 }
 ```
+* garbage object
+```
+{
+  image: string
+  classification : <classification object>
 
+  created_at: datetime
+  updated_at: datetime
+}
+```
 
+# Users
+## Admin
 **GET /users**
 ----
   Returns all users in the system.
@@ -20,6 +30,7 @@
   None
 * **Headers**  
   Content-Type: application/json  
+  Authorization: Bearer `<OAuth Token>`
 * **Success Response:**  
 * **Code:** 200  
   **Content:**  
@@ -65,9 +76,9 @@
   }
   ```
 
-**GET /users/:id/orders**
+**GET /users/:id/images**
 ----
-  Returns all Orders associated with the specified user.
+  Returns all processed garbage images associated with the specified user.
 * **URL Params**  
   *Required:* `id=[integer]`
 * **Data Params**  
